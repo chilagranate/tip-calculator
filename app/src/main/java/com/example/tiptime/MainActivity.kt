@@ -15,7 +15,7 @@
  */
 package com.example.tiptime
 
-import android.inputmethodservice.Keyboard
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -44,9 +44,7 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -131,7 +129,7 @@ fun TipTimeLayout() {
         )
         RoundTheTipRow(
             roundUp = roundUp,
-            OnRoundUpChanged = {roundUp = it},
+            onRoundUpChanged = {roundUp = it},
             modifier = Modifier.padding(bottom=32.dp)
         )
 
@@ -166,7 +164,7 @@ fun EditNumberField(
 @Composable
 fun RoundTheTipRow(
     roundUp: Boolean,
-    OnRoundUpChanged: (Boolean) -> Unit,
+    onRoundUpChanged: (Boolean) -> Unit,
     modifier: Modifier =Modifier){
     Row(
         modifier = modifier
@@ -179,7 +177,7 @@ fun RoundTheTipRow(
 
         Switch(
             checked = roundUp,
-            onCheckedChange = OnRoundUpChanged,
+            onCheckedChange = onRoundUpChanged,
             modifier = modifier
                 .fillMaxWidth()
                 .wrapContentWidth(Alignment.End),
